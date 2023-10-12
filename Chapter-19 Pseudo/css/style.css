@@ -1,0 +1,78 @@
+/* Pseudo selectors include both pseudo-classes and pseudo-elements */
+
+
+/* PSEUDO-CLASSES */
+/* Pseudo-classes selects elements in a specific state */
+
+:is(header,footer) {                            /* not high specificity, can be overwritten */
+    position: sticky;
+    background-color: blanchedalmond;
+}
+
+:is(header,footer,.card) {                /* To maintain higher specificity as it is highly specific after adding class */
+    background-color: #1e293b;
+}
+
+:where(header,footer,.card) {            /* Works identically to :is pseudoclass except it has no specificity, hence can be overwritten */
+    background-color: #1e293b;
+}
+
+nav a:any-link {                               /* selects both a:link and a:visited pseudoclass */
+    color: #000;
+}
+
+nav :is(a:hover,a:focus) {                    /* 'is' is a psuedoclass */
+    color: #000;                            /* Do Not Repeat */
+}
+
+.card:target {
+    border: 2px solid rebeccapurple;        /* who ever is selected or targeted will have the purple border */
+}
+
+.card img[alt] {                             /* selects any image with alt attribute */
+    border: 10px solid red;
+}
+
+.card img:not([alt]) {                          /* selects image with no alt attribute */
+    border: 10px solid red;
+}
+
+.card:nth-child(2) {             /* selects the cards themselves, selects according to actual original order and not based on order of media queries*/
+    background-color: papayawhip;
+}
+
+
+/* PSEUDO-ELEMENTS */
+.card figcaption::after {                           /* can't be selected though, can be set either after or before */
+    content: 'hello';       /* Must be in quotes */
+    display: block;
+}
+
+.card figcaption::first-letter {                     /* first letter gets larger of each card */
+    font-size: 3rem;
+}
+
+.card figcaption::first-line {                       /* whole line gets larger */    
+    font-size: 2rem;
+}
+
+/* For Big Quotes */
+.card p {
+    position: relative;
+}
+
+.card p::before {
+    content: open-quote;                             /* adds a single open quote */
+    font-size: 3em;
+    position: absolute;
+    top: -0.25em;
+    left: -0.5em;
+}
+
+.card p::after {
+    content: close-quote;                              /* closes using single quote */
+    font-size: 3em;
+    position: absolute;
+    top: -0.25em;
+    right: -0.5em; 
+}  

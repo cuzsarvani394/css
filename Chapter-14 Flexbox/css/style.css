@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    min-height: 400px;
+    margin-inline: auto;
+    border: 1px solid black;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly; /* aligns horizonatally */
+    align-items: center; /* aligns vertically */
+    /* default of flex-direction is a row */
+    /* default of flex-wrap is a nowrap */
+    /* flex-direction and flex-wrap both are included under flex-flow */
+    flex-flow: row wrap;        /* direction applies to wrap also */
+    align-content: center;/*  to set how multiple lines are spaced apart from each other */
+    flex-direction: row; 
+    flex-wrap: wrap;
+ 
+    /* -when when you set the direction to a reversed row or column, start and end are also reversed.
+       -when the flex direction is a column, justify-content changes to the vertical and align-items to the horizontal.
+       -Another property you can apply to individual items is align-self. This property accepts the same values as align-items and its value for the specific item.
+       -flex-wrap property, which accepts the following values:
+                nowrap: Every item is fit to a single line.
+                wrap: Items wrap around to additional lines.
+                wrap-reverse: Items wrap around to additional lines in reverse.*/     
+}
+
+.box {
+    height: 100px;
+    min-width: 100px;
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    font-size: 2rem;
+
+    /* flex properties can be set to individual flex-items too */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* flex-grow and flex-shrink 1 relative to level of the container */
+    flex-shrink: 1;                 /*both to grow by same amount, grew to fill the rest of the container*/
+    flex-grow: 1;                   
+    flex-basis: 150px;              /* use absolute values than percentages */
+    /* flex: 1 1 40% is same as flex-grow flex-shrink flex-basis */
+}
+
+.box:nth-child(2) {
+    flex: 2 2 40%;                  /* flex-grow: 2; doesn't mean double; left space take 2 for every 1 */
+    order: 4; /* order ranges low at beginning for negative number less than 0, high at end for number greater than 0 and same position for 0, and both order and row-reverse property can be applied */
+}
+

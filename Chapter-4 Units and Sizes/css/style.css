@@ -1,0 +1,65 @@
+/* Units: */
+
+/* 1. px: is the only commonly absolute unit used. */
+p {
+    font-size: 16px;                        
+}
+
+h1 {
+    border: 2px dashed red;
+}
+
+/* html {                                   By default html root font-size, the browser sets it to 16px=1rem.  
+    font-size: 18px;                        Usually, absolute values are not preferred for font-sizes in root-element  
+    font-style: normal;                     Because it takes away the choice of the browser settings from user. 
+} */
+
+
+/* 2. Percentages: Always relative, a fraction of some other value.
+                   Used to set width of page or of different elements of a page. 
+                   By default, for a block-level element, width is 100%.
+                   Percentages are always relative to the parent-element.*/
+p {
+    width: 50%;
+}
+
+/* 3. rem: relative to the font-size of the root element which is defined by the browser, by default browser sets it as 1rem is approx 16px. */
+
+/* 4. em: relative to parent element font in rem.
+          usually useful in settings of margins and padding. */
+
+/* if the p font-size is 2em and no other parent main element font-size set above, it also looks at the root font-size which is equal to 2rem. */
+
+header {
+    width: 50%;
+}
+
+h1 {
+    border: 2px dashed red;
+    width: 50%;
+    font-size: 3rem;
+    padding: 0.5em;                     /* padding = 0.5(3(1rem)) = 1.5(1rem) = 24px*/
+}
+
+main {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 2em;             /* 2em = 2(2rem) = 4rem */
+}
+
+/* 5. ch: measure of character '0' */
+p {
+    font-size: 2rem;                        /* user-agent-stylesheet: default settings set by the browser. */
+    width: 50ch;
+}
+
+/* 6. CSS reset */
+
+/* 7. vh: 1vh is 1% of viewport height; height is not usually set as it grows as the content grows; when required min-height is set.*/
+body {
+    min-height: 100vh;
+}
+
+/* 8. vw: 1vw is 1% of viewport width; default to 100vw; but % is better-preferred than 100vw because 100vw included scroll which displays the horizontal scroll-bar that is not desirable. */

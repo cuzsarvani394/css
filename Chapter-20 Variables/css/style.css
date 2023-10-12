@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+
+
+/* VARIABLES */
+/* Placed inside a root-pseudoclass, everything inherits from that; the document root; html tag would even inherit from this root pseudoclass
+   Variables are usually in uppercase*/
+
+:root {
+
+    /* COLORS */
+    --BGCOLOR: #475569;
+    --ALT-BGCOLOR: #1E293E;
+    --RADIAL-COLOR: whitesmoke;                 /* It's okay to have same value for 2 variables*/
+    --LIGHT-COLOR: whitesmoke;
+    --DARK-COLOR: black;
+
+    /* FONT */
+    --FF:  Arial, Helvetica, sans-serif;
+    --FS: 1.5rem;
+    --FS-XL: 3rem;
+
+    /* GENERAL */
+    --PADDING: 0.5rem;
+    --SHADOWS: 0 6px 5px -5px var(--DARK-COLOR);    /* having a variable inside a variable is totally okay */
+    --BORDERS: 2px solid var(--DARK-COLOR);
+
+    /* SQUARE */
+    --SQUARE-BGCOLOR: papayawhip;
+    --SQUARE-SIZE: max(150px, 20vw);                /* picks the larger of these values */
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --BGCOLOR: black;               /* only works when dark mode of the system is enabled or anything set apart from dark is ignored(normal state) */
+        --ALT-BGCOLOR: #333;
+        --RADIAL-COLOR: rgb(209, 209, 209);
+        --SQUARE-BGCOLOR: rgb(202, 153, 202);
+    }
+}
+
+body {
+    font-size: var(--FS);
+    font-family: var(--FF);
+    min-height: 100vh;
+    background-color: var(--BGCOLOR);
+    background-image: radial-gradient(var(--RADIAL-COLOR), var(--BGCOLOR));             /* ctrl+F to search for multiples */
+    display: flex;
+    flex-direction: column;
+}
+
+header, nav, footer {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 100%;
+    text-align: center;
+}
+
+header, footer {
+    position: sticky;
+    background-color:var(--ALT-BGCOLOR);
+    color:var(--LIGHT-COLOR);
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+nav {
+    background-color: var(--LIGHT-COLOR);
+    color: var(--DARK-COLOR);
+    padding: var(--PADDING);
+    border-bottom: var(--BORDERS);
+    box-shadow: var(--SHADOWS)                  /* box-shadow:0pt x-offset y-offset blur spread color */
+}
+
+main {
+    flex-grow: 1;
+
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: min(4vw, 5px);                      /* pick the smaller of these values, gap is shorthand for row-gap and column-gap */
+}
+
+.square--highlight {
+    --SQUARE-BGCOLOR: cornflowerblue;               /* only applies to this class, redefining variable only for this class  */
+}
+
+.square {
+    background-color: var(--SQUARE-BGCOLOR);
+    width: var(--SQUARE-SIZE);
+    height: var(--SQUARE-SIZE);
+    border: var(--BORDERS);
+    border-radius: 15px;
+    display: grid;
+    place-content: center;
+    font-size: var(--FS-XL);
+    box-shadow: var(--SHADOWS);
+}

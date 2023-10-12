@@ -1,0 +1,56 @@
+body {
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    background: papayawhip;                 /* background is a shorthand for many other background properties.  */
+    color: black;                           /* color is for font-color. */
+}
+
+/* CSS Colors Types */
+
+/* 1. Writing Names: 140 color names are available, recognisable.  */
+
+/* 2. rgb(red, green, blue):
+      max value is 255 for each.
+      rgb(0,0,0) is black.
+      rgb(255,255,255) is white. */
+p {
+   color: rgb(12,45,210); 
+}
+
+/* 3. rgba(red, green, blue, alpha-channel): 
+      alpha-channel is for transparency : 0 for completely transparent; 1 for no transparency. */
+p {
+    color: rgba(136,54,17, 0.4);
+}
+
+/* 4. Hexadecimal: #000000 - the hexadeciamal code ranges from 0 to 9 numbers and a to f alphabets, the first two characters for red, the next two for green and the last two for blue. 
+      color: #000000 is for black 
+      color: #ffffff is for white
+      shorthands can be used if adjacent pairs are the same.  */
+p {
+    color: #000000;
+}
+
+/* 5. Using color palette or color picker. */
+
+/* 6. hsl(hue, saturation %, lightness %)
+      maximum value for hue is 360(across all different hues). */
+p {
+    color: hsl(167, 25%, 64%);
+}
+
+/* 7. hsla(hue, saturation %, lightness %, transparency): */
+p {
+    color: hsla(167, 36%, 62%, 0.5);
+}
+
+
+/* You can switch the way of colors by clicking on the bar to differently. */
+
+/* Tools: coolers.co
+    -can generate different hexadecimal codes.
+    -contrast checker for background and text color. */
+
+/* Legibility and accessibility are very important considerations as you pick colors for your web page.
+   Try to maintain the contrast of the website and background colors. */

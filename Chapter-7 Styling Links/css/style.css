@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    padding: 10%;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* By default, links are blue underline, visited links red, with pointer cursor, active red. */
+
+a {
+   /*  text-decoration: underline;
+    cursor: pointer;                                        (default link settings.) 
+    color: blue; */
+    color: black;
+    color: hsl(207, 44%, 49%);
+}
+
+a:visited {
+    color: purple;
+}
+
+/* hover pseudoclass can be applied using hsl(changing hue), hsla(changing transparecy) and opacity changes to close values. */
+
+a:hover, a:focus {                     /* pseudoclass: starts with a colon represent current state of the element */        
+    color: dodgerblue;               /* focus pseudoclass(tabs over links) is applied along-side hover pseudoclass*/
+   /* opacity: 0.8; */                 /* By default, hover is color of the link. */
+    color: hsl(187, 44%, 49%);
+    background-color: gold;  /* For opacity, 1 is max, 0 is completely transparent; be careful when using inside an element */
+}
+
+a:active {
+    color: red;
+}
+
+
+/* Specificity:
+   -pseudoclass > anchor element
+   -order: visited > hover > active
+   -visited, hover, active pseudoclasses have the same specificity, hence can overwrite the other. */

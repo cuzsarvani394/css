@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Block-level-elements: -stack over each other like <p> and always create a new line.
+                         -occupy 100% space available to them.
+                         -have a default margin. */
+ 
+/* main {
+    background-color: aquamarine;
+    width: 50%;
+}    */                
+ 
+p {
+    background-color: lightgray;
+    margin: 100px 50px;
+}
+
+
+ /* In-line-elements: -properties like margin, height cannot be applied like <span> element.
+                      -padding can be applied but overelaps paragraphs.
+                      -hence, in-line elements can be converted to inline-block to apply block-properties to them. */
+
+.opposite {
+    display: inline-block;                          /* gives hybrid-properties */
+    background-color: #333;
+    color: whitesmoke;
+    padding: 4rem;
+    height: 200px;
+    margin-top: 100px;
+}                      
+
+
+
+/* Part-2 */
+/* Display property of inline-block is applied when turning links to buttons and lists to horizontal rows. */
+
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    background-color: black;                /* when display of ul is set to none, entire bar disappears from the page. */
+    text-align: right;
+    padding: 0.5rem;
+    list-style-type: none;
+    margin: 0;
+}
+
+li {
+    display: inline-block;                     /* when display of li is set to none, all the list-items disappear. */
+    margin-inline: 0.5rem;                     /* shorthand; margins left-right */
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+}
+
+li a:hover, li a:focus {
+    text-decoration: underline;
+}

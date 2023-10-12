@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    display: grid;
+    place-content: center;
+}
+
+
+
+/* TRANSFORMS */
+div:first-child {
+    background-color: dodgerblue;
+
+   /*  transform: translateX(-50%); */            /* Translates left(negative value) or right(positive value); percentage is on basis of width of the div element; can also take absolute values */
+
+   /*  transform: rotateX(45deg);  */         /* Rotates along top-bottom axis flippin from top to bottom */
+
+    /* transform: scaleX(120%); */            /* Grows or shrinks in the x-direction to the given percentage*/
+
+    /* transform: skewX(-10deg) */            /* skews along x-direction; can take positive and negative values can check the irection based on your requirement */
+}
+
+div:nth-child(2) {
+    background-color: yellow;
+
+   /*  transform: translateY(2rem);  */       /* Translates up(negative value) or down(positive value); percentage on basis of width of the div element; can also take absolute values */
+
+   /*  transform: rotateY(180deg);    */       /* Rotates along the left-rght axis flipping from left to right */
+
+    /* transform: scaleY(120%); */             /* Grows or shrinks in the x-direction to the given percentage*/
+
+    /* transform: skewY(10deg)  */           /* skews along y-direction; can take positive and negative values */
+}
+
+div:last-child {
+    background-color: limegreen;
+
+   /*  transform: translate(100%, 5rem); */           /* Shorthand for translateX and translateY: (X,Y) */
+
+   /*  transform: rotateZ(78deg);      */                 /* Rotates along the surface plane is same as 'rotate'; can also take negative values for clockwise and counter-clockwise */
+
+    /* transform: scale(50%,50%); */                      /* Shrinks to 50% */
+
+   /*  transform: skew(-10deg,-10deg)   */          /* skews along both x and y directions; can take positive and negative values */
+}
+
+
+
+/* TRANSITIONS */
+div:hover {
+    background-color: midnightblue;
+
+    /* Transition property applies to both background-color and transform; can specify different transition-duration and different transition-delay or the same */
+    transition-property: background-color, transform;
+    transition-duration: 2s, 3s;
+    transition-delay: 0.5s;
+
+    transition-timing-function: linear;         /* Linear appies for steady speed; 'ease' is default(starts slow-speeds-stops slow); ease-in-out is similar to ease  */
+
+    /* Shorthand for transition-property, transition-duration, trasition-timing-function and transition-delay */
+    transition: all 2s ease 0.5s;
+}
+
+div:last-child:hover {
+    transform: rotate(180deg);
+}
+
+
+
+/* ANIMATIONS */
+.animate {
+    animation-name: slide;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;            /* 'normal' is the default state; alternates direction for 'alternate' */
+    
+    animation-fill-mode: forwards;                      
+    /* 'backwards' is the default mode, comes back to it's original color; in 'forwards', it remains in the ending state*/    
+
+    /* Shorthand for animate-properties; end with the animation-name */
+    animation: 5s ease-in-out 1s 2 normal forward slide;
+}
+
+/* Animations require Keyframes as well; Here the percetages refer to the duration of the animation; Translate function takes the position value; starts to animate right when you save, doesn't wait for a hover */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(500px) rotate(180deg);
+    }
+    66% {
+        transform: translateX(-500px) rotate(-180deg);
+    }
+    100% {
+        transform: translateX(0);
+        background-color: rebeccapurple;
+    }
+}

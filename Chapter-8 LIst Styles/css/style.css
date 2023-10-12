@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    padding: 5% 10%;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+ol {
+    list-style-type: lower-alpha;               
+            /* georgian/ decimal(default)/ decimal-leading-zeros/ disc/ circle/ upper-roman/ none */
+            /* when attribute of start(a number only) and reversed is added to ol in html, the lower-alpha or upper-roman change accordingly  */
+            /* if set to none; a default padding is added. */
+    list-style-type: none;
+    padding: 0;
+    list-style-type: lower-alpha;             /* Using the value attribute of the html li element. */
+}
+
+ul {
+    list-style-type: square;                /* for bullet stlye */
+    text-align: center;                     /* centers text */
+    list-style-position: inside;            /* positions the bullet styles */
+    color: blue;                          /* colors all list items */
+    line-height: 1.6;                   
+    list-style-image: url('../icons8-check-mark-48.png');  
+
+    /* Shorthand for list-stlye-type, image, position: */
+    list-style: square url('../icons8-check-mark-48.png') inside;
+}
+
+
+/* Can overwrite styles: */
+ul li {
+    color: red;
+}
+
+ul li:nth-child(2) {
+    color: green;                   /* using pseudoclass of nth-child can take numbers/ even/ odd. */
+}
+
+
+
+/* Using pseudo-element: starts with 2 colons: */
+ul li::marker {                                     /* For the markers of list; can specify separately for ul or ol. */
+    color: black;                                 /* By default, markers are in ul, can also write 'ul ::marker' */
+    font-size: 1em;
+    font-family: fantasy;
+    content: "Only $5 >> ";                         /* content applies to both ol and ul. */
+}

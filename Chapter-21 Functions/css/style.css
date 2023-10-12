@@ -1,0 +1,77 @@
+/* FUNCTIONS are in parenthesis, passing values inside */
+
+
+/* MATH FUNCTIONS */
+body {
+    font-size: min(2.25rem,3vh);        /*The min-function: always selects the smallest value, one absolute and one value that will change based on the height of the page, better to choose vh than vw; percentages are usually not preferred; can also be used for images; provides a maximum absolute value */
+
+    font-size: max(1.75rem, 3vh);      /* Chooses the larger of the two values we provide, but at some point it will stop as you shrink the page; one absolute and one relative value that adjusts itself; provides a minimum absolute value */ 
+
+    font-size: clamp(1.75rem,3vh,2.25);     /* clamp: (min, ideal, max); can set separately for small and large font */
+}
+
+
+/* PRACTICE 1 */
+main {
+    display: flex;
+}
+
+main aside {
+    background-color: hsla(0,0%,20%,0.8);
+    font-size: clamp(1.5rem,2vh,1.75rem);
+    font-style: italic;
+}
+
+main section {
+    flex-grow: 1;
+}
+
+@media screen and (min-width: 576px) {
+    main {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    main section {
+        width: calc(70% - 5px);         /* You can mix different units */;
+    }
+
+    main aside {
+        width: calc(30% - 5px);       /* width of 10px between section and aside; also notice section and aside have 2 different font-sizes and they changing */
+    }
+}
+
+a:any-link {
+    color: firebrick;
+}
+
+a:hover, a:focus {
+   /*  opacity: 0.6; */
+   filter: brightness(150%);        /* filter function has many functions in it */
+   filter: hue-rotate(180deg);
+}
+
+.tooltip {
+    border-bottom: 1px dashed orange;
+    position: relative;
+}
+
+.tooltip:hover::before {
+    content: attr(data-tooltip);        /* attribute function (attributes in html) */
+    position: absolute;
+    top: -20px;
+    white-space: nowrap;
+    background-color: black;
+    color: white;
+    padding: 10px;          /* padding: 0.5em, based on the size of the element it is applied to */
+    border-radius: 15px;
+}
+
+
+/* PRACTICE 2: GRID FUNCTIONS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px,300px));      /* repeat function; minmax is specific to grid; min for the smallest grid-item and max for the largest grid-item */
+    gap: min(2vw, 20px);        /* shorthand for both row and column-gap; can be more if screen size is too big so as to adapt */
+}
+

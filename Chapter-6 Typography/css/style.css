@@ -1,0 +1,50 @@
+/* Importing google-font: also use the css link of font-size */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Typography is the way that text is arranged and presented. */
+
+body {
+    padding: 10%;
+    font-size: 2rem;
+}
+
+/* input, button {                                  text and font settings are usually inherited but not inside a form. 
+    font: inherit
+} */
+
+/* Text-settings: */
+p {
+    text-decoration: underline;                      /* other options include overline/ line-through/ none */
+    text-transform: lowercase;                       /* other options include capitalise/ uppercase/ lowercase */
+    text-align: justify;                             /* other options include left/ justify/ none. */
+    text-indent: 2em;
+}
+
+/* Other Properties: */
+p {
+    line-height: 1.2;                         /* increases readability; accepts a number, 1.2(default) or 1.5 most preferred */
+    letter-spacing: 0.1em;                          /* not usually useed */
+    word-spacing: 0.2em;
+}
+
+/* Font Properties: */
+p {
+    font-size: 1rem;
+    font-weight: 400;                     /* Bold or not; ranges from 100-900 and other settings like bold, bolder, lighter */
+   /*  font-style: italic; */                         /* italic/ normal/ oblique */
+}       
+
+/* fonts suggested by vs code are web-safe. */
+
+p {
+    font-family: serif;               /* other options are serif(newspapers), sans-serif(web), monospace; cursive; fantasy; */
+    font-family: 'Courier New', Courier, monospace;         /* fonts with spaces are included in quotes. */
+    font-family: Arial, Helvetica, sans-serif;  /* most commonly used font; fonts separated by hyphen don;t require quotes. */
+    font-family: 'Times New Roman', Times, serif;       /* default browser font. */
+
+    /* link of the google-font */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* fonts from fonts.googl.com can be used by copied font-link to html and css or imported. */
+

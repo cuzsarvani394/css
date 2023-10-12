@@ -1,0 +1,114 @@
+/* Part 1 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    min-height: 200vh;                                          /* page to scroll down to */
+}
+
+.outer-container {
+    border: dashed 3px #000;
+    width: 75vw;
+    height: 95vh;
+    margin: 40px auto;
+    position: relative;
+}
+
+.inner-container {
+    border: solid 2px #00f;
+    width: 40vw;
+    height: 50vh;
+    margin: 200px auto;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    padding: 1rem;
+}
+
+.absolute {
+    position: absolute;                                  /* position: static(default) */
+    background-color: #f00;         /* absolute position needs a relative parents else it'll relative to browser boundary */
+    top: 0;                           /* if set relative to more than one container, picks the ancestor closest to it  */
+    left: 0;                          /* top and left zero are the default choices */
+    /* left: -10000px; (to move it off page but still part of document) */
+    z-index: 1;                       /* default value of z-index is 0 */
+}
+
+.relative {
+    position: relative;                 /* relative to it's parent container already */
+    background-color: #00f;
+    top: 200px;
+    left: 50px;
+}
+
+.fixed {
+    background-color: #0f0;                 /* position according to page positon */
+    position: fixed;
+    top: 400px;
+    left: 100px;
+}
+
+.sticky {
+    background-color: #000;             /* sticks as long as the container catches up to it to scroll */
+    position: sticky;
+    width: 80px;
+    height: 80px;
+    top: 0;
+}
+
+
+/* Part 2 */
+
+html {scroll-behavior: smooth;}
+
+section {
+    height: 100vh;
+}
+
+.blue {background-color: blue;}
+.red {background-color: red;}
+.green {background-color: green;}
+
+header, footer {
+    color: #fff;
+    text-align: center;
+    height: 100px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    font-size: 5rem;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    background-color: black;
+    font-size: 3rem;
+    /* position: fixed; and width: 100% is another option */
+}
+   
+a:visited {
+    color: white;
+}
+
+.social {
+    background-color: royalblue;
+    position: fixed;
+    top: 30%;
+    left: 0;
+    color: white;
+    font-size: inherit;                              /* as it is a button */
+    padding: 1rem;
+    z-index: 1;
+}

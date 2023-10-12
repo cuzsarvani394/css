@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+}
+
+.columns {
+    column-width: 250px;
+    column-count: 4;                                    /* adapts to screen size and width-available */
+    columns: 4 250px;                                   /* shorthand for column-count and column-width */
+    column-rule: 3px solid #333; 
+    column-gap: 3rem;
+}
+
+.columns p {
+    margin-top: 0;                                      /* to remove margins, paragraph has it's default margins */
+}
+
+.columns h2 {
+    margin-top: 0;
+    font-size: 3rem;
+    color: #fff;
+    background-color: #333;
+    padding: 1rem;
+    break-inside: avoid;
+    break-before: column;                               /* not a great idea whren shrinking the page */
+}
+
+.columns .quote{                                        /* specific of quote class to apply columns */
+    margin-top: 3rem;                                   /* tool: unicode-table.com */
+    font-size: 5rem;
+    text-align: center;
+    color: #333;
+    column-span: all;
+}
+
+.columns span {
+    white-space: nowrap;
+}

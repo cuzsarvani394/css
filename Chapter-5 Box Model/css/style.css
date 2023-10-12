@@ -1,0 +1,50 @@
+/* CSS Reset: */
+* {
+    margin: 0;
+    padding: 0;                                  /* content-box sets width only for the content. */
+    box-sizing: content-box;                     /* border-box sets width including content, padding and the border. */
+}
+
+.container {
+    /* width: 400px; */
+    font-size: 1.5rem;
+
+    border: 2px dashed red;
+    border: 2px outset red;                       /* same for all 4 sides. */
+    border: 2px double red;
+    border-top: 5px solid grey;
+    border-top-width: 6px;                          /* can break-out each individual setting as-well. */
+    border-top-style: ridge;
+    border-top-color: blueviolet;
+    border-right: 10px dotted rgb(23, 75, 8);
+    border-radius: 10px 10px 10px 10px;             /* top-right-bottom-left */
+
+    margin: 1.5em;                                      /* applies to all 4 margins of top-right-bottom-left in order. */
+    /* margin: 1.5em 2em 1.5em;                         (1.5em for top; 2em for right-left; 1.5em for bottom) 
+    margin: 1.5em 2em;                                  (1.5em for top-bottom; 2em for right-left)
+    margin: 1.5em 2em 3em 4em;                          (all in order top-right-bottom-left) */
+    /* margin-top: 1.5em;                              
+    margin-right: 1.5em;                              
+    margin-bottom: 2em;                              
+    margin-left: 2em;  */                             
+    
+    padding: 1em;                                   /* 1em is same as 1.5rem */
+    /* same margin-settings are applicable to padding and border as-well. */
+    padding: 1.5em 2em 3em 4em;
+
+    outline: 5px solid purple;                      /* similar to border but it outline doesn;t take up space. */
+    outline-offset: 5px;                              /* pushed out or in from the border or box-model. */
+    outline-offset: -20px;
+}
+
+/* Converting a box to a circle: */
+.circle {
+    background-color: gold;
+    width: 100px;
+    height: 100px;
+    outline: 2px solid red;
+    outline-offset: 0.25rem; 
+    border: 2px solid black;
+    margin: 3rem auto;                              /* 3rem margin is for top-bottom; auto centers it horizontally. */
+    border-radius: 50px;                            /* half the value of width and height to get a circle. */
+}

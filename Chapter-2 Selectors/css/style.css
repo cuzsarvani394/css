@@ -1,0 +1,67 @@
+/* Types of Selectors */
+
+/* * {
+       Universal Selector: selects all elements.
+       Properties like borders are not inherited but are selected. 
+    border: 1px solid red;
+}
+ 
+/* html {
+       html or root element selector, mostly preferred for inheritance of font-settings.
+       All properties related to font or typography are inherited.
+       Properties like borders, form properties like button, input, select, textarea are not inherited.
+       Inheritance makes the code DRY. 
+} */
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+/* 1. Element Selectors */ 
+body {
+    font-size: 22px;
+}
+
+/* main {
+     semantic elements like main occurs only once. 
+} */
+
+h1, h2 {
+    color: blue;                    /* Group Selector */
+}
+
+p span {
+    text-transform: uppercase;          /* Selecting element inside other element*/
+    background-color: gold;
+}
+
+p {
+    color: purple;
+}
+
+p {
+    color: red;                     /* Applies according to cascade of the CSS and specificity */
+}
+
+/* 2. Class Selectors */
+.gray {
+    color: gray;
+}
+
+/* 3. id Selectors */
+#second {
+    font-style: italic;
+}
+
+
+/* Order of specificity:
+   1. !important
+   2. id selector (not preferred)  
+   3. class selector (most common)
+   4. element selector */
+
+p {
+    color: royalblue!important;
+}
+
+/* Can check specificity and over-ruling using the specificity calculator. */

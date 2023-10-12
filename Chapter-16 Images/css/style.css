@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Example 1 */
+img {display: block;} /* as image is an in-line element, is in the same line as the paragraph with extra space*/
+
+/* body {
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+} */
+
+/* section {
+    margin: 1rem;
+    padding-left: 20px;
+    border: 1px solid red;
+} */
+
+.example img {
+        /* width of image is 25% of the container */
+    width: 25%;         /* as we set width and height in html, recommended to set the height */
+    height: auto;       /* height will respond to the width percentage */
+}
+
+
+
+/* Example 2 */
+.nowrap {
+    white-space: nowrap;
+}
+
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: rgb(251,210,156);
+    background-image: url('../img/maps.png');
+    background-repeat: no-repeat;
+    background-position: center center;                 /* position across x and y axis */
+    background-size: cover;
+}
+
+.hero {
+    border-bottom: 2px solid black;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;                                      /* between items inside flex container */
+
+   /*  background-color: rgb(251,210,156); */
+   /*  background-image: url('../img/pat1-transparency.png'); */  /* transparency of the image can also be set */
+   /*  background-image: url('../img/pat1.png'); */
+/*     background-image: url('../img/maps.png');
+    background-repeat: no-repeat;         */   /* font must be visible in background as it is the most imp thing */
+    /* background-repeat: repeat-y; */              /* can repeat along x and y axis as well */
+   /*  background-size: cover;  */        /* image resizes with that cover setting; another option is "contain" */
+    /* Always use an image double the size of the image you want to display to not make it seem blurry */
+
+
+    background-color: hsla(0, 0%, 0%, 0.548);       /* can filter the background */
+}
+
+.h1 {
+    font-size: 500%;
+    color: aliceblue;
+    text-shadow: 2px 2px 5px black;               /* x-axis y-axis blur color */
+    /* background-color: hsla(0, 0%, 0%, 0.548);
+    padding: 0.25rem;
+    border-radius: 10px; */
+
+}
+
+.profile-pic-figure {
+    width: 35%;
+}
+
+.profile-pic-figure img {
+    width: 100%;
+    height: auto; 
+    min-width: 100px;
+    border: 5px double gray;
+    border-radius: 50%;
+}
+
+
+
+/* Example 3 */
+body {
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    background-color: aliceblue;
+    background-image: url("../img/bubble.png"),
+                      linear-gradient(to left,rgb(4, 19, 68),white);  
+    /*can use as many colors as you want and direction as well*/
+    background-repeat: repeat-y, no-repeat;                  /* repeat for both the images */
+    background-position: right center;
+    background-size: 15%, auto;
+
+    /* background: repeat-y right center url("../img/bubble.png"), no-repeat linear-gradient(to-left, steelblue, white) */                          /* background shorthand for (background-repeat, position, image */
+}
+
+
+
+/* Example 4 */
+.clip {
+    font-weight: 800;
+    font-size: 18rem;
+    text-align: center;
+    background-image: url("../img/maps.png");
+    background-size: 100%;
+    text-transform: uppercase;
+    
+    -webkit-background-clip: text;                /* both has to be used */ 
+    background-clip: text;
+     /* caniuse.com; a prefix -webkit has to be used along with background-clip for chrome, different for different browsers */
+
+    /* color: hsla(0, 0%, 0%, 0.185); */
+    color: transparent;
+}

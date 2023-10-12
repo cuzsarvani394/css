@@ -1,0 +1,105 @@
+/* Media queries help you to modify your site based on specific characteristics and parameters.
+   It is the key to responsive design, as web pages will respond to width of the device viewport. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    min-height: 100vh;
+
+    background-color: #475569;
+    background-image: radial-gradient(whitesmoke, #475569);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Syntax of media query:
+   @media (media type) and (condition: breakpoint) {CSS rules}
+   -media type could be screen, all, print, speech
+   -conditions could be min-width(starting-from), max-width(upto), orientation, min-aspect-ratio(a ratio can be set loikw 7/4) */
+
+header, nav, main, footer {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 100%;
+    text-align: center;
+}
+
+header, footer {
+    position: sticky;
+    background-color: #1e293b;
+    color: whitesmoke;
+}
+
+header {
+    top: 0;
+}
+
+nav {
+    background-color: white;
+    color: black;
+    padding: 0.5rem;
+    border-bottom: 2px solid black;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    bottom: 0;
+}
+
+
+/* || SMALL */
+@media screen and (min-width: 576px) {
+    body {
+        background-color: green;
+        background-image: radial-gradient(white, green); 
+    }
+
+    nav {display: none;}
+}
+
+/* || MEDIUM */
+@media screen and (min-width: 768px) {
+    body {
+        background-color: gold;
+        background-image: radial-gradient(white, gold); 
+    }
+}
+
+/* || LARGE */
+@media screen and (min-width: 992px) {
+    body {
+        background-color: firebrick;
+        background-image: radial-gradient(white, firebrick); 
+    }
+}
+
+/* || XL */
+@media screen and (min-width: 1200px) {
+    body {
+        background-color: rebeccapurple;
+        background-image: radial-gradient(white, rebeccapurple); 
+    }
+}
+
+/* || MOBILE DEVICE LANDSCAPE */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+    body {
+        background-color: dodgerblue;
+        background-image: radial-gradient(white, dodgerblue); 
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    nav {display: none;}
+}
